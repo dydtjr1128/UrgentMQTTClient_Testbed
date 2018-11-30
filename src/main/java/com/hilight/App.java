@@ -16,8 +16,8 @@ public class App extends Thread {
     private MqttClient client;
     private String normalTopic = "test";
     private String urgentTopic = "test";
-    private String normalContent = "Message from MqttPublishSample";
-    private String urgentContent = "urgent";
+    private String normalContent = "message";
+    private String urgentContent = "message";
 
     public App(int normalPubs, int urgentPubs) {
         persistence = new MemoryPersistence();
