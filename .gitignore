@@ -40,3 +40,7 @@ hs_err_pid*
 src/main/resources/
 src/test/
 target/
+UrgentMQTTClient_Testbed_Pub/src/main/resources/
+UrgentMQTTClient_Testbed_Pub/src/test/
+UrgentMQTTClient_Testbed_Sub/src/main/resources/
+UrgentMQTTClient_Testbed_Sub/src/test/

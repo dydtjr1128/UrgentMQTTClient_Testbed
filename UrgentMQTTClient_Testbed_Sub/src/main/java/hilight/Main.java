@@ -2,7 +2,7 @@ package hilight;
 
 public class Main {
     public static void main(String[] args) {
-        new App(100,10);
+        new App(100);
 
     }
 }
