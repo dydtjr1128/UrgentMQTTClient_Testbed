@@ -1,4 +1,4 @@
-package com.hilight;
+package hilight;
 
 public class Main {
     public static void main(String[] args) {

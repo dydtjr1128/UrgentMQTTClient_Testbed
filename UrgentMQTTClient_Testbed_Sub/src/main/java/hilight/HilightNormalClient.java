@@ -1,4 +1,4 @@
-package com.hilight;
+package hilight;
 
 import org.eclipse.paho.client.mqttv3.*;
 
@@ -14,6 +14,7 @@ public class HilightNormalClient extends MqttClient implements Runnable {
     private String content;
     private StringBuilder builder;
     private FileWriter writer;
+
     public HilightNormalClient(String serverURI, String clientId, MqttClientPersistence persistence, String topic, String content)
             throws MqttException {
         super(serverURI, clientId, persistence);

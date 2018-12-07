@@ -1,4 +1,4 @@
-package com.hilight;
+package hilight;
 
 import org.eclipse.paho.client.mqttv3.*;
 
@@ -32,7 +32,6 @@ public class HilightUrgentClient extends MqttClient implements Runnable {
             publish(topic, message);
             disconnect();
             close();
-
 
             try {
                 writer = new FileWriter("log.csv", true);
