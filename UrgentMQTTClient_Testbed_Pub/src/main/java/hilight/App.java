@@ -15,7 +15,6 @@ import java.util.ArrayList;
 
 public class App extends Thread {
     private ArrayList<MqttClient> hilightMqttClients;
-    private int qos = 2;
     private String broker = "tcp://192.168.1.86:1883";
     private String normalClientId = "MQTT_Testbed_N";
     private String urengtClientId = "MQTT_Testbed_U";

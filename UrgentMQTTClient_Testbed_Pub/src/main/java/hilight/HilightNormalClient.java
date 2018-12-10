@@ -27,15 +27,21 @@ public class HilightNormalClient extends MqttClient implements Runnable {
     public void run() {
         try {
             connect(connOpts);
-            builder.append("NormalMessage").append(",").append(clientId).append(",").append(LocalTime.now().toString()).append(",N0");
-            message = new MqttMessage(builder.toString().getBytes());//client id:time:N
-            publish(topic, message);
-            disconnect();
+            int count = 0;
+            while (count++ < 60) {
+                builder.append("NormalMessage").append(",").append(clientId).append(",").append(LocalTime.now().toString()).append(",N0");
+                message = new MqttMessage(builder.toString().getBytes());//client id:time:N
+                publish(topic, message);
+                writer.write(builder.delete(builder.length() - 1, builder.length()).append("\n").toString());
+                writer.flush();
+                if (clientId.equals("MQTT_Testbed_N0")) {
+                    System.out.print(builder.append(" ").append(count).toString());
+                }
+                builder.setLength(0);
+                Thread.sleep(1000);
+            }
             close();
-
-            writer.write(builder.delete(builder.length()-1, builder.length()).append("\n").toString());
-            writer.flush();
-            builder.setLength(0);
+            disconnect();
         } catch (Exception e) {
             e.printStackTrace();
         }
